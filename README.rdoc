@@ -6,8 +6,10 @@ This is the project for CMPT276 by Group 3.
 
 Team members:
 
-
+Aleksey - DB backend development
 Oleg - DB, backend development
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+***So I got ran bundle, havent set up a db yet***
