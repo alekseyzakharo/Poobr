@@ -9,7 +9,13 @@ gem 'bcrypt', '3.1.7'
 
 gem 'puma', '2.9.1'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
+group :development, :test do
+        gem 'sqlite3'
+end
+group :production do
+        gem 'pg'
+end
+#gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -49,3 +55,5 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+ruby "2.3.0"
