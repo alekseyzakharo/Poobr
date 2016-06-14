@@ -7,6 +7,7 @@ gem 'rails', '4.2.6'
 # This will help us hash user passwords - Aleksey
 gem 'bcrypt', '3.1.7'
 
+gem 'puma', '2.9.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
