@@ -1,17 +1,12 @@
-<head>
-</head>
-<body>
-  <h1>Poobr</h1>
-  <div style="float:right;padding-right:50px">
-    <% if logged_in? %>
-      <a> Logged in as <%= current_user.name %> </a><br><br>
-      <%= link_to 'Home', root_url %>
-      <%= link_to "Profile", current_user %>
-      <%= link_to "Log out", logout_path, method: "delete" %>
-          <!-- logout_path, method: "delete" -->
-    <% else %>
-      <%= link_to 'Home', root_url %>
-      <%= link_to "Log in", login_path %>
-      <%= link_to "Create Account", new_user_path %>
-    <% end %>
-</body>
+
+<h1>Welcome to Poobr!</h1>
+<div class="box" style=width:20%; float:left;>
+  <p>
+    Poobr is a new way to quickly find - or share - a bathroom!
+    Create your account to start exploring today!
+  </p>
+</div>
+<div class="box" style="width:60%; float:left; margin:0; padding:0em;">
+  <%= image_tag("poobr.png", width:'100%') %>
+  <!-- <img src="poobr.png"> -->
+</div>
