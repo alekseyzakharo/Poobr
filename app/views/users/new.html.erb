@@ -3,24 +3,31 @@
 <div class="box">
   <div class="login">
     <center>
+    <div class="field">
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
-
+    </div>
+    <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
-
+    </div>
+    <div class="field">
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control' %>
-
+    </div>
+    <div class="field">
     <%= f.label :password %>
     <%= f.password_field :password, class: 'form-control' %>
-
+    </div>
+    <div class="field">
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation, class: 'form-control' %>
-
+    </div>
       <%= f.hidden_field :level, :value => 1 %>
-
+    <p><br></p>
+    <div class="submit">
       <%= f.submit "Create my Account", class: "btn btn-primary"%>
+    </div>
     <% end %>
   </center>
   </div>
