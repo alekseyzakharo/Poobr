@@ -25,6 +25,7 @@ body{
 
 p{
   margin:1em;
+  font-size:1em;
 }
 
 .container{
@@ -41,12 +42,10 @@ p{
 }
 
 .box{
-  float:left;
+  float:middle;
   text-align: center;
-  border-style:solid;
-  border-color:white;
   padding:1em;
-  margin:1em;
+  margin:2em;
 }
 
 .navbar{
@@ -62,7 +61,6 @@ p{
   /*box-shadow: 0 8px 6px -6px #999;*/
   box-shadow: 0 0.4em 0.3em -0.3em #909090;
 }
-
 
 li{
   float:right;
@@ -81,4 +79,10 @@ li a:hover{
 
 .logout{
   background-color: #A0A0A0;
+}
+
+h1
+{
+  margin-top:6%;
+  margin-left:2%;
 }

@@ -1,7 +1,7 @@
 
 
   <ul class="navbar">
-    <li style="float: left"><a><b>Poobr</b></a></li>
+    <li style="float: left"><%= image_tag("logo---.png", width:'23%', :alt => "logo") %></li>
     <% if logged_in? %>
     <li class="logout"><%= link_to "Log out", logout_path, method: "delete" %></li>
     <li><a> Logged in as <%= current_user.name %> </a></li>

@@ -1,7 +1,8 @@
-<h1>Create Account</h1>
+<h1><center>Create Account</center></h1>
 
 <div class="box">
   <div class="login">
+    <center>
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
 
@@ -21,6 +22,7 @@
 
       <%= f.submit "Create my Account", class: "btn btn-primary"%>
     <% end %>
+  </center>
   </div>
 </div>
 <!-- <%= link_to 'Back', root_url %> -->

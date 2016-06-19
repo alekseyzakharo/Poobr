@@ -1,7 +1,8 @@
-<h1>Log in</h1>
+<h1><center>Log in</center></h1>
 
 <div class="box">
   <div>
+    <center>
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :email %>
@@ -12,7 +13,8 @@
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
+  </center>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p><center>New user? <%= link_to "Sign up now!", signup_path %></center></p>
   </div>
 </div>
