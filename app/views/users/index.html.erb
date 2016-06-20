@@ -1,17 +1,15 @@
-<head>
+  <center>
+    <h1>User List</h1>
+  </center>
 
-</head>
-<body>
-  <h1><center>
+    <div class="box">
       <ul class="users">
         <% @users.each do |user| %>
-          <li>
-            <%= link_to user.name, user %>
-          </li>
+          <li><%= link_to user.name, user %></li>
         <% end %>
       </ul>
-  </center></h1>
-    <center>
+    </div>
+  <center>
     <div class="submit">
     <%= link_to 'Back', root_url %>
     </div>
@@ -19,6 +17,3 @@
     <%= link_to 'Add New User', new_user_path %>
     </div>
   </center>
-
-
-</body>

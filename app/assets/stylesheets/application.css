@@ -54,15 +54,14 @@ p{
   margin:0;
   padding: 0;
   overflow:hidden;
-  position:fixed;
+  position:auto;
   top:0;
   width:100%;
   background-color: #F0F0F0;
-  /*box-shadow: 0 8px 6px -6px #999;*/
   box-shadow: 0 0.4em 0.3em -0.3em #909090;
 }
 
-li{
+.navbar li{
   float:right;
 }
 
@@ -81,6 +80,10 @@ li a:hover{
   background-color: #A0A0A0;
 }
 
+.userlist{
+  background-color: lightyellow;
+}
+
 h1
 {
   margin-top:6%;
@@ -96,4 +99,8 @@ h1
 .submit
 {
   width: 20%;
+}
+
+.users {
+  list-style: none;
 }
