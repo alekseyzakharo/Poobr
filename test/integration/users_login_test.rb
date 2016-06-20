@@ -1,3 +1,5 @@
+#tests were implemented with help from tutorial found in iteration1 writeup
+
 require 'test_helper'
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
