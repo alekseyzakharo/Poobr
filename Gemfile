@@ -56,4 +56,7 @@ group :development do
   gem 'spring'
 end
 
+  gem 'geocoder'
+  gem 'gmaps4rails'
+
 ruby "2.3.0"

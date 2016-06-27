@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @posting.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @posting.longitude %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @posting.address %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @posting.description %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @posting.title %>
+</p>
+
+<p>
+  <strong>Infant:</strong>
+  <%= @posting.infant %>
+</p>
+
+<p>
+  <strong>Handicap:</strong>
+  <%= @posting.handicap %>
+</p>
+
+<p>
+  <strong>Shower:</strong>
+  <%= @posting.shower %>
+</p>
+
+<p>
+  <strong>userid:</strong>
+  <%= @posting.userid %>
+</p>
+
+<%= link_to 'Edit', edit_posting_path(@posting) %> |
+<%= link_to 'Back', postings_path %>
