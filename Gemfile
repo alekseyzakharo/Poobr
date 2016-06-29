@@ -13,6 +13,7 @@ group :development, :test do
         gem 'sqlite3'
 end
 group :production do
+        gem 'rails_12factor'
         gem 'pg'
 end
 #gem 'pg', '~> 0.15'
@@ -56,7 +57,11 @@ group :development do
   gem 'spring'
 end
 
+  #google map gems
   gem 'geocoder'
   gem 'gmaps4rails'
+
+  #for the drop down menu
+  gem 'bootstrap-sass'
 
 ruby "2.3.0"
