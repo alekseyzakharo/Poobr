@@ -10,7 +10,11 @@
       </ul>
     </div>
   <% end %>
-
+<div style='width: 500px; margin: 0 auto;'>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
   <div class="field">
     <%= f.label :address %><br>
     <%= f.text_field :address %>
@@ -18,10 +22,6 @@
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
   </div>
   <div class="field">
     <%= f.label :infant %><br>
@@ -40,4 +40,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
 <% end %>
