@@ -4,22 +4,22 @@ class PostingsController < ApplicationController
   # GET /postings
   # GET /postings.json
   def index
-    #@postings = Posting.all
-    #@hash = Gmaps4rails.build_markers(@postings) do |posting, marker|
-    #    marker.lat posting.latitude
-    #    marker.lng posting.longitude
-    #    marker.infowindow posting.description
-    #end
+    @postings = Posting.all
+    @hash = Gmaps4rails.build_markers(@postings) do |posting, marker|
+        marker.lat posting.latitude
+        marker.lng posting.longitude
+        marker.infowindow posting.description
+    end
 
-    @posting = Posting.find(params[:id])
+    #@posting = Posting.find(params[:id])
 
     #sets up hash for map marker
-    @hash = Gmaps4rails.build_markers(@posting) do |posting, marker|
-      marker.lat farm.latitude
-      marker.lng farm.longitude
-      marker.infowindow "<a target='blank' href='https://www.google.com/maps/place/"+"#{farm.address}"+"'>Get Directions With Google Maps</a>"
-      marker.json({ title: posting.title, description: posting.description })
-    end
+    #@hash = Gmaps4rails.build_markers(@posting) do |posting, marker|
+    #  marker.lat posting.latitude
+    #  marker.lng posting.longitude
+    #  marker.infowindow "<a target='blank' href='https://www.google.com/maps/place/"+"#{farm.address}"+"'>Get Directions With Google Maps</a>"
+    #  marker.json({ title: posting.title, description: posting.description })
+    #end
 
 
 
