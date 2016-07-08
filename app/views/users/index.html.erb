@@ -1,23 +1,34 @@
   <h1><center>User List</h1></center>
   <p>
   <center>
-    As an admin, you are able to view all registered users here.
-  </center>
-  </p>
-    <div class="box">
-      <center>
-      <% @users.each do |user| %>
-      <div class="field">
-      <a><%= link_to user.name, user %></a>
+    <b>As an admin, you are able to view all registered users here.</b><br>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>email</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="submit">
+        <%= link_to 'Back', root_url %>
       </div>
-      <% end %>
+      <div class="submit">
+        <%= link_to 'Add New User', new_user_path %>
+      </div>
     </center>
-    </div>
-  <center>
-    <div class="submit">
-    <%= link_to 'Back', root_url %>
-    </div>
-    <div class="submit">
-    <%= link_to 'Add New User', new_user_path %>
-    </div>
-  </center>
