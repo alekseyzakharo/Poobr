@@ -1,7 +1,6 @@
 
 
   <ul class="navbar">
-
     <li style="float: left"><%= image_tag("logo---.png", width:'100em', :alt => "logo") %></li>
     <% if logged_in? %>
     <li class="dropdown">
@@ -27,4 +26,5 @@
       <li><%= link_to "Create Account", new_user_path %></li>
       <li><%= link_to 'Home', root_url %></li>
     <% end %>
+
   </ul>
