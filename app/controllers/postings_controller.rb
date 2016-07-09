@@ -10,6 +10,19 @@ class PostingsController < ApplicationController
         marker.lng posting.longitude
         marker.infowindow posting.description
     end
+
+    #@posting = Posting.find(params[:id])
+
+    #sets up hash for map marker
+    #@hash = Gmaps4rails.build_markers(@posting) do |posting, marker|
+    #  marker.lat posting.latitude
+    #  marker.lng posting.longitude
+    #  marker.infowindow "<a target='blank' href='https://www.google.com/maps/place/"+"#{farm.address}"+"'>Get Directions With Google Maps</a>"
+    #  marker.json({ title: posting.title, description: posting.description })
+    #end
+
+
+
   end
 
   # GET /postings/1
@@ -66,11 +79,46 @@ class PostingsController < ApplicationController
     end
   end
 
-  private
+  def search
+		@location = params[:search]
+		@distance = params[:km]
+		@postings = Posting.near(@location, @distance)
+
+		if @location.empty?
+      flash[:error] = "You can't search without a search term; please enter a location and retry!"
+			#gflash notice: "You can't search without a search term; please enter a location and retry!"
+			redirect_to "/"
+		else
+			if @postings.length < 1
+        flash[:error] = "Sorry! We couldn't find any Poobr's within #{@distance} km of #{@location}."
+				#gflash notice: "Sorry! We couldn't find any farms within #{@distance} km of #{@location}."
+				redirect_to "/"
+			else
+				search_map(@postings)
+			end
+		end
+
+	end
+
+
+
+private
+
+  def search_map(postings)
+		@postings = postings
+		@hash = Gmaps4rails.build_markers(@postings) do |posting, marker|
+			  marker.lat posting.latitude
+			  marker.lng posting.longitude
+			  marker.infowindow "<a href='/postings/"+"#{posting.id}"+"'>#{posting.title}, #{posting.address}</a>"
+			  marker.json({ title: posting.title, id: posting.id })
+		end
+	 end
+
+
     # Use callbacks to share common setup or constraints between actions.
-    def set_posting
+  def set_posting
       @posting = Posting.find(params[:id])
-    end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def posting_params

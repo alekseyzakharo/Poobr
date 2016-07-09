@@ -19,6 +19,7 @@
 
   <tbody>
     <% @postings.each do |posting| %>
+      <% if (current_user.id == posting.userid) || (current_user.level == 0) %>
       <tr>
         <td><%= posting.latitude %></td>
         <td><%= posting.longitude %></td>
@@ -32,6 +33,7 @@
         <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
         <td><%= link_to 'Destroy', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
