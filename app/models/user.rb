@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+
+before_create :confirmation_token
   #we need to downcase before we save, saving is case sensitive
   before_save { self.email = email.downcase }
 
@@ -23,4 +25,18 @@ class User < ActiveRecord::Base
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(:validate => false)
+  end
+
+ private
+  #Generating the confirm_token
+def confirmation_token
+      if self.confirm_token.blank?
+          self.confirm_token = SecureRandom.urlsafe_base64.to_s
+      end
+    end
 end

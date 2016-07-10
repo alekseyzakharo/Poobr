@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(name: 'admin', email: 'admin@admin.com', password: 'heyhey',
-                        password_confirmation: 'heyhey', level: 0, email_confirmed:true)
+                        password_confirmation: 'heyhey', level: 0, email_confirmed:true, confirm_token:nil)
+
 
 
 #populate with temporary fake poobr postings
