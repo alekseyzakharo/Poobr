@@ -7,6 +7,9 @@ gem 'rails', '4.2.6'
 # This will help us hash user passwords - Aleksey
 gem 'bcrypt', '3.1.7'
 
+#Gem for viewing sent emails locally - Oleg
+gem 'letter_opener'
+
 gem 'puma', '2.9.1'
 # Use postgresql as the database for Active Record
 group :development, :test do
