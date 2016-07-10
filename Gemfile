@@ -8,7 +8,7 @@ gem 'rails', '4.2.6'
 gem 'bcrypt', '3.1.7'
 
 #Gem for viewing sent emails locally - Oleg
-gem 'letter_opener', :group => :development
+gem 'letter_opener_web'#, :group => :development
 
 gem 'puma', '2.9.1'
 # Use postgresql as the database for Active Record
