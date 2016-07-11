@@ -23,12 +23,12 @@ body{
    background-image:url('background.png');
 }
 
+/*Paragraph format:
+*/
+
 p{
   margin:1em;
   font-size:1em;
-}
-
-.container{
 }
 
 .error_explanation{
@@ -46,6 +46,10 @@ p{
   margin:2em;
 }
 
+/*
+CSS for the navigation bar. This keeps it on top of everything:
+*/
+
 .navbar{
   list-style-type: none;
   font-size:1.5em;
@@ -62,6 +66,9 @@ p{
   float:right;
 }
 
+
+/* This is CSS for the table elements in the nav bar */
+
 li a{
   display:block;
   text-align: center;
@@ -72,14 +79,6 @@ li a{
 li a:hover{
   color:blue;
 }
-
-/*.logout{
-  background-color: #A0A0A0;
-}
-
-.userlist{
-  background-color: lightyellow;
-}*/
 
 h1
 {
@@ -98,8 +97,22 @@ h1
   width: 20%;
 }
 
-.users {
+/*.users {
   list-style: none;
+}*/
+
+/*Styling to make tables more readable:
+*/
+
+table, td, th, tr, thead, tbody {
+/*table.list, td.list, th.list, tr.list, thead.list, tbody.list{*/
+  table-layout: fixed;
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 0.5em;
+}
+
+th,td{
 }
 
 #dropdown-menu {
