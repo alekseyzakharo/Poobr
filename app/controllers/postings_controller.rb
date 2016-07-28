@@ -8,7 +8,12 @@ class PostingsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@postings) do |posting, marker|
         marker.lat posting.latitude
         marker.lng posting.longitude
-        marker.infowindow posting.description
+        marker.picture({
+              :url => "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|007FFF|000000",
+              :width => 20,
+              :height => 33
+              })
+        marker.json({ title: posting.title, description: posting.description })
     end
 
     #@posting = Posting.find(params[:id])
@@ -104,13 +109,20 @@ class PostingsController < ApplicationController
 
 private
 
+
+
   def search_map(postings)
 		@postings = postings
 		@hash = Gmaps4rails.build_markers(@postings) do |posting, marker|
 			  marker.lat posting.latitude
 			  marker.lng posting.longitude
 			  marker.infowindow "<a href='/postings/"+"#{posting.id}"+"'>#{posting.title}, #{posting.address}</a>"
-			  marker.json({ title: posting.title, id: posting.id })
+        marker.picture({
+              :url => "https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=wc|2E9AFE",
+              "width" => 20,
+              "height" => 33
+              })
+        marker.json({ title: posting.title, id: posting.id })
 		end
 	 end
 
@@ -123,5 +135,13 @@ private
     # Never trust parameters from the scary internet, only allow the white list through.
     def posting_params
       params.require(:posting).permit(:latitude, :longitude, :address, :description, :title, :infant, :handicap, :shower, :userid)
+    end
+
+    def gmaps4rails_marker_picture
+      {
+        "picture" => 'app/assets/images/Shower.png',    # string,  mandatory
+        "width" =>  16,          # integer, mandatory
+        "height" => 16,          # integer, mandatory
+      }
     end
 end
