@@ -22,6 +22,7 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
+      <div><%= f.hidden_field :funds, :value => 500 %></div>
       <div><%= f.hidden_field :level, :value => 1 %></div>
     <p><br></p>
     <div class="submit">

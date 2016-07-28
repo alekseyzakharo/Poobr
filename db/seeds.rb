@@ -8,7 +8,9 @@
 
 User.create(name: 'admin', email: 'admin@admin.com', password: 'heyhey',
                         password_confirmation: 'heyhey', level: 0, email_confirmed:true, confirm_token:nil)
-
+User.create(name: 'alex', email: 'alex@sfu.ca', password: 'heyhey',
+                        password_confirmation: 'heyhey', level: 1, email_confirmed:true, confirm_token:nil,
+                        funds: 500)
 
 
 #populate with temporary fake poobr postings
