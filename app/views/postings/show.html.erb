@@ -1,52 +1,75 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Latitude:</strong>
-  <%= @posting.latitude %>
+  <strong>Title:</strong>
+  <%= @posting.title %>
 </p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @posting.longitude %>
-</p>
-
 <p>
   <strong>Address:</strong>
   <%= @posting.address %>
 </p>
-
 <p>
   <strong>Description:</strong>
   <%= @posting.description %>
 </p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @posting.title %>
-</p>
-
-<p>
-  <strong>Infant:</strong>
-  <%= @posting.infant %>
-</p>
-
-<p>
-  <strong>Handicap:</strong>
-  <%= @posting.handicap %>
-</p>
-
-<p>
-  <strong>Shower:</strong>
-  <%= @posting.shower %>
-</p>
+<div style="display:inline-block">
+  <% if @posting.infant == true %>
+    <%=image_tag 'Baby.png', :size => "100x100" %>
+  <% end %>
+  <% if @posting.handicap == true %>
+    <%=image_tag 'Disabled.png', :size => "100x100" %>
+  <% end %>
+  <% if @posting.shower == true %>
+    <%=image_tag 'Shower.png', :size => "100x100" %>
+  <% end %>
+</div>
 
 <!-- WE need to find a way to display owners name my searching for his id
 <p>
   <strong>userid:</strong>
-  
+
 </p>
 -->
-<% if logged_in? %>
-  <%= link_to 'Edit', edit_posting_path(@posting) %> |
-  <%= link_to 'Back', postings_path %>
-<% end %>
+<div>
+  <h2>Comments</h2>
+      <% @posting.comments.each do |comment| %>
+
+        <p>
+          <b>Name:</b>
+          <%= comment.commenter %>
+        </p>
+        <p>
+          <b>Comment:</b>
+          <%= comment.body %>
+        </p>
+
+        <% if logged_in? %>
+          <% if current_user.level == 0 %>
+            <p>
+            <%= link_to 'Destroy', [@posting, comment], :method => :delete, :confirm => "Are you sure?" %>
+            </p>
+          <% end %>
+        <% end %>
+      <% end %>
+
+
+    <% if logged_in? %>
+        <h2>Add a comment:</h2>
+          <%= form_for([@posting, @posting.comments.build]) do |f| %>
+        <div class="field">
+          <%= f.hidden_field :commenter, :value => current_user.name %>
+        </div>
+        <div class="field">
+          <%= f.label :body %><br />
+          <%= f.text_area :body %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+
+
+      <%= link_to 'Edit', edit_posting_path(@posting) %> |
+      <%= link_to 'Back', postings_path %>
+    <% end %>
+  </div>

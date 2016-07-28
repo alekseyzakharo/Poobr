@@ -6,5 +6,5 @@ class Posting < ActiveRecord::Base
     validates :address, presence: true
     validates :description, presence: true, length: { minimum: 6 }
 
-
+    has_many :comments
 end

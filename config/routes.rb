@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  resources :postings
+
+  resources :postings do
+    resources :comments
+  end
+
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -11,6 +15,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   #get 'users/new'
+
+
 
   resources :users do
     member do
