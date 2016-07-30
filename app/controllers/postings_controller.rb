@@ -33,6 +33,7 @@ class PostingsController < ApplicationController
   # GET /postings/1
   # GET /postings/1.json
   def show
+    @users = User.all
   end
 
   # GET /postings/new

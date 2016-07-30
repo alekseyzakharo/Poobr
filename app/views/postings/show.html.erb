@@ -11,7 +11,6 @@
 <p>
   <strong>Description:</strong>
   <%= @posting.description %>
-</p>
 <div style="display:inline-block">
   <% if @posting.infant == true %>
     <%=image_tag 'Baby.png', :size => "100x100" %>
@@ -23,7 +22,20 @@
     <%=image_tag 'Shower.png', :size => "100x100" %>
   <% end %>
 </div>
-
+</p>
+<div style="display:inline-block">
+  <%=image_tag 'nophoto.png' %>
+</div>
+<div>
+<p>
+  Owned by:
+  <% @users.each do |user| %>
+    <% if (user.id == @posting.userid) %>
+      <%= user.name %>
+    <% end %>
+  <% end %>
+</p>
+</div>
 <!-- WE need to find a way to display owners name my searching for his id
 <p>
   <strong>userid:</strong>
