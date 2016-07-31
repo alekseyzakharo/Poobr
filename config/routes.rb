@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get 'transaction' => 'users#transaction'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

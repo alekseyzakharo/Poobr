@@ -124,19 +124,19 @@ th,td{
 
 .posting{
   background: ;
-  border: 1px solid grey;
+  border: ;
   padding: 1em;
 }
 
 /*the top part of a posting plus icons*/
 .head{
+  height: auto;
   font-size: 120%;
-  font-weight: bold;
   line-height: 200%;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #6bbdd8;
+  background-color: #6bbddf;
   display: block;
   color: white;
   text-align: left;
@@ -144,6 +144,29 @@ th,td{
   text-decoration: none;
 }
 
+.head img{
+  height: auto;
+}
+
 .title{
   font-weight: bold;
+  font-size: 150%;
+}
+
+.description{
+  color: black;
+  margin: 1em;
+  text-align: left;
+  padding: 1em 1.5em;
+  background-color: white;
+  display: block;
+}
+
+.comments{
+  color: black;
+  margin: 0;
+  text-align: left;
+  padding: 1em 1.5em;
+  background-color: white;
+  display: block;
 }

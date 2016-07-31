@@ -1,8 +1,9 @@
 
 <p id="notice"><%= notice %></p>
 <div class="posting">
-  <p class="head">
-    <%= @posting.title %>
+  <div class="head">
+    <p class="title">
+      <%= @posting.title %>
       <% if @posting.infant == true %>
         <%=image_tag 'Baby.png', :size => "80x80" %>
       <% end %>
@@ -12,41 +13,47 @@
       <% if @posting.shower == true %>
         <%=image_tag 'Shower.png', :size => "80x80" %>
       <% end %>
-    <br>
-    <br>
-        <%=image_tag 'nophoto.png', :size => "400x400" %>
+    </p>
+    <div style="float:left; padding: 0em 1em 1em 0em; display: block">
+        <%=image_tag 'nophoto.png', :size => "300x300" %>
+    </div>
+    <div style="description">
+      <p>
         <strong>Address:</strong> <%= @posting.address %>
-  </p>
+      </p>
+        <p>
+          <strong>Description:</strong>
+          <%= @posting.description %>
+        </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @posting.description %>
+        <% flash.each do |key, value| %>
+          <center><div class="alert alert-<%= key %>"><%= value %></div></center>
+      <% end %>
 
-  </p>
-  <div style="display:inline-block">
-    <%=image_tag 'nophoto.png' %>
+      <p>
+        <strong>UserID:</strong>
+        <%= @posting.userid %>
+      </p>
+      <% @users.each do |user| %>
+        <% if (user.id == @posting.userid) %>
+            <p>
+              <strong>Owned by:</strong>
+              <%= user.name %>
+            </p>
+        <% end %>
+      <% end %>
+  </div>
   </div>
 
-  <% @users.each do |user| %>
-    <% if (user.id == @posting.userid) %>
-      <div>
-        <p>
-          Owned by:
-          <%= user.name %>
-        </p>
-      </div>
+  <div class="comments">
+
+    <%= form_tag("/transaction", method: :get, class: " navbar-form") do %>
+    <%= hidden_field :buyer, :value => User.find(current_user.id) %>
+    <%= hidden_field :owner, :value => User.find(@posting.userid) %>
+
+    <%= submit_tag "Purchase Poobr", name: nil, :class => "btn btn-info" %>
     <% end %>
-  <% end %>
-
-</div>
-<!-- WE need to find a way to display owners name my searching for his id
-<p>
-<strong>userid:</strong>
-
-</p>
--->
-<div>
-  <h2>Comments</h2>
+  <div class="title">Comments</div>
   <% @posting.comments.each do |comment| %>
 
   <p>
@@ -69,7 +76,7 @@
 
 
   <% if logged_in? %>
-  <h2>Add a comment:</h2>
+  <div class="title">Add a comment:</div>
   <%= form_for([@posting, @posting.comments.build]) do |f| %>
   <div class="field">
     <%= f.hidden_field :commenter, :value => current_user.name %>
