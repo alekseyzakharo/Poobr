@@ -12,4 +12,11 @@ ActionMailer::Base.smtp_settings = {
   :password       => ENV['SENDGRID_PASSWORD'],
   :domain         => 'heroku.com',
   :enable_starttls_auto => true
+
+  # :address => 'smtp.postmarkapp.com',
+  # :port => '587',
+  # :authentication => :plain,
+  # :user_name => '3ebbcdd6-e6ee-48e5-b880-56ad61e6ef04',
+  # :password => '3ebbcdd6-e6ee-48e5-b880-56ad61e6ef04'
+
 }

@@ -7,6 +7,8 @@ gem 'rails', '4.2.6'
 # This will help us hash user passwords - Aleksey
 gem 'bcrypt', '3.1.7'
 
+gem 'cloudinary'
+
 #Gem for viewing sent emails locally - Oleg
 gem 'letter_opener_web'#, :group => :development
 

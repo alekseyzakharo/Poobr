@@ -15,6 +15,7 @@
       <th>Infant</th>
       <th>Handicap</th>
       <th>Shower</th>
+      <th>Userid</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -31,6 +32,7 @@
         <td><%= posting.infant %></td>
         <td><%= posting.handicap %></td>
         <td><%= posting.shower %></td>
+        <td><%= posting.userid %></td>
         <td><%= link_to 'Show', posting %></td>
         <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
         <td><%= link_to 'Destroy', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>

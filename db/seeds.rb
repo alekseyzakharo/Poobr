@@ -15,9 +15,9 @@ User.create(name: 'alex', email: 'alex@sfu.ca', password: 'heyhey',
 
 #populate with temporary fake poobr postings
 
-Posting.create(title: 'Downton', address: '550 west hastings st, vancouver bc',
+Posting.create(title: 'Downtown', address: '550 west hastings st, vancouver bc',
                 description: 'Bathroom', infant: true, handicap: true,
-                shower: true, userid:1)
+                shower: true, userid:33)
 
 Posting.create(title: 'Vancouver West', address: '6051 yew st, vancouver bc',
                 description: 'Small Bathroom', infant: true, handicap: true,
