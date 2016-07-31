@@ -119,3 +119,31 @@ th,td{
   align: center;
 
 }
+
+/*styling for the page for a posting: */
+
+.posting{
+  background: ;
+  border: 1px solid grey;
+  padding: 1em;
+}
+
+/*the top part of a posting plus icons*/
+.head{
+  font-size: 120%;
+  font-weight: bold;
+  line-height: 200%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #6bbdd8;
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 1em 1.5em;
+  text-decoration: none;
+}
+
+.title{
+  font-weight: bold;
+}
