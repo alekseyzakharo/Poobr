@@ -38,6 +38,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def transaction
+    @userBuyer = :buyer
+    @userOwner = :owner
+		@amount  = 100
+
+		#if @userBuyer[:field, :funds] < @amount
+    #  flash[:error] = "You do no have enough money"
+		#	redirect_to "/"
+		#else
+			@userBuyer.update_attribute(:funds, @amount)
+      @userOwner.update_attribute(:funds => @amount)
+		  redirect_to "/"
+		#end
+  end
+
+
+
   def destroy
       User.find(params[:id]).destroy
       flash[:success] = "User deleted"
@@ -59,9 +76,11 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:name, :email, :password,
+
+
+    def user_params
+        params.require(:user).permit(:name, :email, :password,
                             :password_confirmation, :level)
-  end
+    end
 
 end

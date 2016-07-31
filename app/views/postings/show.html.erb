@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<% flash.each do |key, value| %>
+    <center><div class="alert alert-<%= key %>"><%= value %></div></center>
+<% end %>
+
+<p>
+  <strong>UserID:</strong>
+  <%= @posting.userid %>
+</p>
 <p>
   <strong>Title:</strong>
   <%= @posting.title %>
@@ -42,6 +50,15 @@
 
 </p>
 -->
+
+<%= form_tag("/transaction", method: :get, class: " navbar-form") do %>
+  <%= hidden_field :buyer, :value => User.find(current_user.id) %>
+  <%= hidden_field :owner, :value => User.find(@posting.userid) %>
+
+  <%= submit_tag "Purchase Poobr", name: nil, :class => "btn btn-info" %>
+<% end %>
+
+
 <div>
   <h2>Comments</h2>
       <% @posting.comments.each do |comment| %>
