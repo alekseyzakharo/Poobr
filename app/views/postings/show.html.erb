@@ -1,4 +1,8 @@
 <%= cloudinary_js_config %>
+<% flash.each do |key, value| %>
+    <center><div class="alert alert-<%= key %>"><%= value %></div></center>
+<% end %>
+
 
 <p id="notice"><%= notice %></p>
 <div class="posting">
@@ -28,13 +32,13 @@
           <%= @posting.description %>
         </p>
 
-        <% flash.each do |key, value| %>
-          <center><div class="alert alert-<%= key %>"><%= value %></div></center>
-      <% end %>
-
       <p>
         <strong>UserID:</strong>
         <%= @posting.userid %>
+      </p>
+      <p>
+        <strong>Price:</strong>
+        <%= @posting.price %>
       </p>
       <% @users.each do |user| %>
         <% if (user.id == @posting.userid) %>
@@ -46,13 +50,11 @@
       <% end %>
 
       <% if logged_in? %>
-        <%= form_tag("/transaction", method: :get, class: " navbar-form") do %>
-        <%= hidden_field :buyer, :value => current_user.id %>
-        <%= hidden_field :owner, :value => @posting.userid %>
-        <%= submit_tag "Purchase Poobr", name: nil, :class => "submitButton" %>
 
-        <%=  link_to "Purchase Poobr", transaction_path(buyer: current_user.id, owner: @posting.userid) %>
-        <% end %>
+        <div class="purchase-button">
+          <%=  link_to "Purchase Poobr", transaction_path(buyer: current_user.id, owner: @posting.userid,
+          price: @posting.price, path: posting_path) %>
+        </div>
       <% end %>
     </div>
   </div>

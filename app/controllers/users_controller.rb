@@ -39,19 +39,21 @@ class UsersController < ApplicationController
   end
 
   def transaction
-  
+
     @userBuyer = User.find(params[:buyer])
     @userOwner = User.find(params[:owner])
-		@amount  = 100
+		@amount  = params[:price]
 
-		#if @userBuyer[:field, :funds] < @amount
-    #  flash[:error] = "You do no have enough money"
-		#	redirect_to "/"
-		#else
-			@userBuyer.update_attribute(:funds, -@amount)
-      @userOwner.update_attribute(:funds, @amount)
-		  redirect_to "/"
-		#end
+		if @userBuyer.funds.to_i < @amount.to_i
+      flash[:error] = "You do no have enough money"
+			redirect_to params[:path]
+		else
+
+			@userBuyer.update_attribute(:funds, @userBuyer.funds.to_i - @amount.to_i)
+      @userOwner.update_attribute(:funds, @userOwner.funds.to_i + @amount.to_i)
+      flash[:error] = "Thank You for Purchasing a Poobr"
+		  redirect_to params[:path]
+		end
   end
 
 

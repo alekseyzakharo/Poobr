@@ -38,6 +38,11 @@
     <%= f.label :shower %><br>
     <%= f.check_box :shower %>
   </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+
   <%= f.hidden_field :userid, :value => current_user.id %>
 
 <!-- <%Cloudinary::Uploader.upload('app/assets/images/Baby.png', :public_id => 'sample_id')%> -->
