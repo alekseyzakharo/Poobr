@@ -1,3 +1,4 @@
+<%= cloudinary_js_config %>
 
 <p id="notice"><%= notice %></p>
 <div class="posting">
@@ -15,7 +16,9 @@
       <% end %>
     </p>
     <div style="float:left; padding: 0em 1em 1em 0em; display: block">
-        <%=image_tag 'nophoto.png', :size => "300x300" %>
+
+    <%=image_tag ("http://res.cloudinary.com/hp6hhtigd/#{@posting.image_id}") %>
+    
     </div>
     <div style="description">
       <p>

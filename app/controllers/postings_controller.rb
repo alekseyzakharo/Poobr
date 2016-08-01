@@ -52,6 +52,11 @@ class PostingsController < ApplicationController
 
     respond_to do |format|
       if @posting.save
+          if params[:image_id].present?
+  preloaded = Cloudinary::PreloadedFile.new(params[:image_id])
+  raise "Invalid upload signature" if !preloaded.valid?
+  @posting.image_id = preloaded.identifier
+        end
         format.html { redirect_to @posting, notice: 'Posting was successfully created.' }
         format.json { render :show, status: :created, location: @posting }
       else
@@ -135,7 +140,7 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def posting_params
-      params.require(:posting).permit(:latitude, :longitude, :address, :description, :title, :infant, :handicap, :shower, :userid)
+      params.require(:posting).permit(:latitude, :longitude, :address, :description, :title, :infant, :handicap, :shower, :userid, :image_id)
     end
 
     def gmaps4rails_marker_picture

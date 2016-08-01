@@ -15,3 +15,5 @@
 
 # Ignore emacs temp files
 .env
+
+cloudinary.yml
