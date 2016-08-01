@@ -136,7 +136,7 @@ th,td{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #6bbddf;
+  background-color: transparent;
   display: block;
   color: white;
   text-align: left;
@@ -167,7 +167,7 @@ th,td{
   margin: 0;
   text-align: left;
   padding: 1em 1.5em;
-  background-color: white;
+  background-color: #F0F0F0;
   display: block;
 }
 

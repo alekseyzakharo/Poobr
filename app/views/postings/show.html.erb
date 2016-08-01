@@ -59,10 +59,12 @@
     </div>
   </div>
 
+<div class="comments" style="margin: -1.5em 1em 1em 1em;">
   <div class="comments">
   <div class="title"> <h2>Comments</h2></div>
   <% @posting.comments.each do |comment| %>
 
+<div style="float:right; margin: 0em 1em 0em 1em; display: block;">
   <p>
     <b>Name:</b>
     <%= comment.commenter %>
@@ -71,6 +73,7 @@
     <b>Comment:</b>
     <%= comment.body %>
   </p>
+</div>
 
   <% if logged_in? %>
   <% if current_user.level == 0 %>
@@ -95,7 +98,7 @@
     <%= f.submit %>
   </div>
   <% end %>
-
+</div>
 
   <%= link_to 'Edit', edit_posting_path(@posting) %> |
   <%= link_to 'Back', postings_path %>
