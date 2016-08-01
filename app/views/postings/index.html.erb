@@ -3,7 +3,7 @@
 <h1>Listing Postings</h1>
 
 <% if logged_in? %>
-<div style="overflow-x:auto;">
+<div style="overflow-x:auto; margin:2em 1em 2em 1em; font-size:1.4em;">
 <table>
   <thead>
     <tr>
@@ -24,7 +24,7 @@
   <tbody>
     <% @postings.each do |posting| %>
       <% if (current_user.id == posting.userid) || (current_user.level == 0) %>
-      <tr>
+      <tr style="font-size:1.4em;">
         <td><%= posting.latitude %></td>
         <td><%= posting.longitude %></td>
         <td><%= posting.address %></td>
@@ -47,5 +47,7 @@
 
 <br>
 
+<div style="overflow-x:auto; margin:0em 1em 2em 1em; font-size:1.4em;">
 <%= link_to 'New Posting', new_posting_path %>
 <% end %>
+</div>

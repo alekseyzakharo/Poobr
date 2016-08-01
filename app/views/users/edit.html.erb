@@ -1,8 +1,8 @@
 <% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
+<center><h1>Update your profile</h1></center>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3" style="margin-top: 2em;">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
@@ -17,7 +17,7 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
-
+      <p></br></p>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 
