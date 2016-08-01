@@ -2,6 +2,10 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
 
+  setup do
+    @user1 = users(:one)
+    @user2 = users(:two)
+  end
 
 
   test "should get new" do
@@ -15,6 +19,10 @@ class UsersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:users)
   end
 
+#  test "should get transaction" do
+#    get :transaction
+#    assert_response :success
+#  end
 
 
 end
