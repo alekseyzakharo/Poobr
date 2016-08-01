@@ -11,7 +11,7 @@ User.create(name: 'admin', email: 'admin@admin.com', password: 'heyhey',
                         funds: 10000)
 User.create(name: 'alex', email: 'alex@sfu.ca', password: 'heyhey',
                         password_confirmation: 'heyhey', level: 1, email_confirmed:true, confirm_token:nil,
-                        funds: 1)
+                        funds: 0)
 User.create(name: 'alex', email: 'mike@sfu.ca', password: 'heyhey',
                         password_confirmation: 'heyhey', level: 1, email_confirmed:true, confirm_token:nil,
                         funds: 500)

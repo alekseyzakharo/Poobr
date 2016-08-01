@@ -17,3 +17,5 @@
 .env
 
 cloudinary.yml
+
+public/assets/*
