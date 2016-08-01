@@ -32,7 +32,7 @@
 
 
 <%= form_tag("/search", method: :get, class: " navbar-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "city, province, zip, address", class: "form-control" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Enter Exact Address", class: "form-control" %>
   <%= select_tag :km, options_for_select([["within 1 km", "1"], ["within 2 km", "2"], ["within 5 km", "5"]]), class: "form-control" %>
   <%= submit_tag "Find Poobr's", name: nil, :class => "btn btn-info" %>
 <% end %>
@@ -50,7 +50,7 @@ handler.buildMap({
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
-  
+
 });
 </script>
 

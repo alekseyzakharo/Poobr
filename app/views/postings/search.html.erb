@@ -6,13 +6,13 @@
     <center><div class="alert alert-<%= key %>"><%= value %></div></center>
 <% end %>
 
-
+<div class="poobr-search">
 <%= form_tag("/search", method: :get, class: " navbar-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "city, province, zip, address", class: "form-control" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Enter Exact Address", class: "form-control" %>
   <%= select_tag :km, options_for_select([["within 1 km", "1"], ["within 2 km", "2"], ["within 5 km", "5"]]), class: "form-control" %>
   <%= submit_tag "Find Poobr's", name: nil, :class => "btn btn-info" %>
 <% end %>
-
+</div>
 
 <div style='width: 800px;margin:0 auto;'>
   <div id="map" style='width: 800px; height: 400px;'>

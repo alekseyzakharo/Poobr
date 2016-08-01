@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(name: 'admin', email: 'admin@admin.com', password: 'heyhey',
-                        password_confirmation: 'heyhey', level: 0, email_confirmed:true, confirm_token:nil)
+                        password_confirmation: 'heyhey', level: 0, email_confirmed:true, confirm_token:nil
+                        funds: 99999)
 User.create(name: 'alex', email: 'alex@sfu.ca', password: 'heyhey',
                         password_confirmation: 'heyhey', level: 1, email_confirmed:true, confirm_token:nil,
                         funds: 500)

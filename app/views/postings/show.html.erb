@@ -45,15 +45,21 @@
             </p>
         <% end %>
       <% end %>
-  </div>
-  </div>
 
+      <% if logged_in? %>
+        <%= form_tag("/transaction", method: :get, class: " navbar-form") do %>
+        <%= hidden_field :buyer, :value => current_user.id %>
+        <%= hidden_field :owner, :value => @posting.userid %>
+        <%= submit_tag "Purchase Poobr", name: nil, :class => "submitButton" %>
 
+        <%=  link_to "Purchase Poobr", transaction_path(buyer: current_user.id, owner: @posting.userid) %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="comments">
-
-
-  <div class="title">Comments</div>
+  <div class="title"> <h2>Comments</h2></div>
   <% @posting.comments.each do |comment| %>
 
   <p>
@@ -80,11 +86,11 @@
   <div class="field">
     <%= f.hidden_field :commenter, :value => current_user.name %>
   </div>
-  <div class="field">
+  <div class="comment_field">
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
-  <div class="actions">
+  <div class="comment_submit">
     <%= f.submit %>
   </div>
   <% end %>

@@ -170,3 +170,16 @@ th,td{
   background-color: white;
   display: block;
 }
+
+.submitButton{
+  background-color: green;
+  width: 150px;
+}
+
+.comment_field{
+  width: 300px;
+}
+
+.comment_submit{
+  width: 150px;
+}
