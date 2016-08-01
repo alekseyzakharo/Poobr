@@ -18,7 +18,7 @@
     <div style="float:left; padding: 0em 1em 1em 0em; display: block">
 
     <%=image_tag ("http://res.cloudinary.com/hp6hhtigd/#{@posting.image_id}") %>
-    
+
     </div>
     <div style="description">
       <p>
@@ -48,14 +48,11 @@
   </div>
   </div>
 
+
+
   <div class="comments">
 
-    <%= form_tag("/transaction", method: :get, class: " navbar-form") do %>
-    <%= hidden_field :buyer, :value => User.find(current_user.id) %>
-    <%= hidden_field :owner, :value => User.find(@posting.userid) %>
 
-    <%= submit_tag "Purchase Poobr", name: nil, :class => "btn btn-info" %>
-    <% end %>
   <div class="title">Comments</div>
   <% @posting.comments.each do |comment| %>
 

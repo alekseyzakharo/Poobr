@@ -122,7 +122,8 @@ private
 		@hash = Gmaps4rails.build_markers(@postings) do |posting, marker|
 			  marker.lat posting.latitude
 			  marker.lng posting.longitude
-			  marker.infowindow "<a href='/postings/"+"#{posting.id}"+"'>#{posting.title}, #{posting.address}</a>"
+        marker.infowindow "<a href='/postings/"+"#{posting.id}"+"'>#{posting.title}</a>"
+			  #marker.infowindow "<a href='/postings/"+"#{posting.id}"+"'>#{posting.title}, #{posting.address}</a>"
         marker.picture({
               :url => "https://chart.googleapis.com/chart?chst=d_map_pin_icon&chld=wc|2E9AFE",
               "width" => 20,
