@@ -20,7 +20,11 @@
       <% end %>
     </p>
     <div style="float:right; margin: -7em 2em 1em 0em; display: block;">
-    <%=image_tag ("http://res.cloudinary.com/hp6hhtigd/#{@posting.image_id}") , :size => "300x300" %>
+      <%if (@posting.image_id) %>
+        <%=image_tag ("http://res.cloudinary.com/hp6hhtigd/#{@posting.image_id}") , :size => "300x300" %>
+      <% else %>
+        <%=image_tag 'nophoto.png', :size => "300x300" %>
+      <% end %>
 
     </div>
     <div style="description">
