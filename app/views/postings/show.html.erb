@@ -1,4 +1,8 @@
 <%= cloudinary_js_config %>
+<% flash.each do |key, value| %>
+<center><div class="alert alert-<%= key %>"><%= value %></div></center>
+<% end %>
+
 
   <p id="notice"><%= notice %></p>
 <div class="postingbox">
