@@ -98,6 +98,7 @@ class UsersController < ApplicationController
 
     def reset_pass
         @user = User.find_by_email(params[:email])
+        if @user
         if @user.email_confirmed
             @user.update_attributes(:confirm_token =>SecureRandom.urlsafe_base64.to_s)
             UserMailer.password_reset(@user).deliver_now
@@ -107,7 +108,11 @@ class UsersController < ApplicationController
             flash[:error] = "This account has not been activated"
             redirect_to root_url
         end
+    else
+        flash[:error] = "Sorry. User does not exist"
+        redirect_to root_url
     end
+end
 
   private
 
