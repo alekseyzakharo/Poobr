@@ -1,6 +1,6 @@
 <h1><center>Create Account</center></h1>
 <%= form_for(@user) do |f| %>
-<div class="box">
+<div class="welcomebox">
   <div class="login">
     <center>
     <div class="field">
@@ -25,7 +25,7 @@
       <div><%= f.hidden_field :funds, :value => 500 %></div>
       <div><%= f.hidden_field :level, :value => 1 %></div>
     <p><br></p>
-    <div class="submit">
+    <div class="submit" style="width: 60%">
       <%= f.submit "Create my Account"%>
     </div>
   </center>
