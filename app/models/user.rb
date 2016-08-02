@@ -32,7 +32,13 @@ before_create :confirmation_token
     save!(:validate => false)
   end
 
- private
+def pass_reset
+self.confirm_token = nil
+self.password = SecureRandom.urlsafe_base64.to_s
+save!(:validate => false)
+end
+
+
   #Generating the confirm_token
 def confirmation_token
       if self.confirm_token.blank?
@@ -40,3 +46,4 @@ def confirmation_token
       end
     end
 end
+private

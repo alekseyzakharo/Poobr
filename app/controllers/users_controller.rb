@@ -77,13 +77,43 @@ class UsersController < ApplicationController
       end
   end
 
+#
+
+    def new_pass
+        @user = User.find_by_confirm_token(params[:id])
+        if @user
+            @user.pass_reset
+             flash[:success] = "Your password has been reset, you can now log in with your new password that you received in the email"
+             UserMailer.password_new(@user).deliver_now
+             redirect_to login_url
+
+        else
+            flash[:error] = "Sorry. User does not exist"
+            redirect_to root_url
+        end
+    end
+
+
+
+
+    def reset_pass
+        @user = User.find_by_email(params[:email])
+        if @user.email_confirmed
+            @user.confirmation_token
+            UserMailer.password_reset(@user).deliver_now
+            flash[:success] = "Your new password has been sent to your email"
+            redirect_to login_url
+        else
+            flash[:error] = "This account has not been activated"
+            redirect_to root_url
+        end
+    end
+
   private
-
-
 
     def user_params
         params.require(:user).permit(:name, :email, :password,
-                            :password_confirmation, :level)
+                            :password_confirmation, :level, :funds)
     end
 
 end
