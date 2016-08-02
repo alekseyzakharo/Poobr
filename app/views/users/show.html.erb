@@ -1,15 +1,15 @@
 
-<div class="profilebox">
+<div class="postingbox" style="margin-top: 3em;">
   <div>
     <p class="title"> <%= @user.name %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      <div style="display:inline-block; border: 1px solid black; float:right;">
+      <div style="float:right; border: 1px solid black">
       <%=image_tag 'profile.png', :size => "100x100" %>
     </div>
   </p>
   </div>
 
 
-  <div style="description">
+  <div class="description">
   <p>
     <strong>ID#:</strong>  <%= @user.id %>
   </p>
@@ -21,6 +21,11 @@
   <p>
     <strong>Funds:</strong> <%= @user.funds %>
   </p>
+  <% if ((logged_in?) && (current_user.level == 0)) %>
+  <div class="purchase-button">
+    <td><%= link_to 'Edit this profile', edit_user_path(@user) %></td>
+  </div>
+  <% end %>
   </div>
 </div>
 </div>
