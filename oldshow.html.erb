@@ -1,0 +1,110 @@
+<%= cloudinary_js_config %>
+<% flash.each do |key, value| %>
+    <center><div class="alert alert-<%= key %>"><%= value %></div></center>
+<% end %>
+
+
+<p id="notice"><%= notice %></p>
+<div class="posting">
+  <div class="head">
+    <p class="title">
+      <%= @posting.title %>
+      <% if @posting.infant == true %>
+        <%=image_tag 'Baby.png', :size => "80x80" %>
+      <% end %>
+      <% if @posting.handicap == true %>
+        <%=image_tag 'Disabled.png', :size => "80x80" %>
+      <% end %>
+      <% if @posting.shower == true %>
+        <%=image_tag 'Shower.png', :size => "80x80" %>
+      <% end %>
+    </p>
+    <div style="float:right; margin: -7em 2em 1em 0em; display: block;">
+      <%if (@posting.image_id) %>
+        <%=image_tag ("http://res.cloudinary.com/hp6hhtigd/#{@posting.image_id}") , :size => "300x300" %>
+      <% else %>
+        <%=image_tag 'nophoto.png', :size => "300x300" %>
+      <% end %>
+
+    </div>
+    <div class="description">
+      <p class="description">
+        <strong>Address:</strong> <%= @posting.address %>
+      </p>
+        <p>
+          <strong>Description:</strong>
+          <%= @posting.description %>
+        </p>
+
+      <p>
+        <strong>UserID:</strong>
+        <%= @posting.userid %>
+      </p>
+      <p>
+        <strong>Price:</strong>
+        <%= @posting.price %>
+      </p>
+      <% @users.each do |user| %>
+        <% if (user.id == @posting.userid) %>
+            <p>
+              <strong>Owned by:</strong>
+              <%= user.name %>
+            </p>
+        <% end %>
+      <% end %>
+
+      <% if logged_in? %>
+
+        <div class="purchase-button">
+          <%=  link_to "Purchase Poobr", transaction_path(buyer: current_user.id, owner: @posting.userid,
+          price: @posting.price, path: posting_path) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<div class="comments" style="margin: -1.5em 1em 1em 1em;">
+  <div class="comments">
+  <div class="title" style="font-size: 2em"><strong>Comments:</strong></div>
+  <% @posting.comments.each do |comment| %>
+
+<div style="float:right; margin: 0em 1em 0em 1em; display: block;">
+  <p>
+    <b>Name:</b>
+    <%= comment.commenter %>
+  </p>
+  <p>
+    <b>Comment:</b>
+    <%= comment.body %>
+  </p>
+</div>
+
+  <% if logged_in? %>
+  <% if current_user.level == 0 %>
+  <p>
+    <%= link_to 'Destroy', [@posting, comment], :method => :delete, :confirm => "Are you sure?" %>
+  </p>
+  <% end %>
+  <% end %>
+  <% end %>
+
+  <% if logged_in? %>
+  <div class="title">Add a comment:</div>
+  <%= form_for([@posting, @posting.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.hidden_field :commenter, :value => current_user.name %>
+  </div>
+  <div class="comment_field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="comment_submit">
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>
+
+  <%= link_to 'Edit', edit_posting_path(@posting) %> |
+  <%= link_to 'Back', postings_path %>
+  <% end %>
+</div>

@@ -208,11 +208,29 @@ th,td{
 .comments{
   font-family: Roboto, Arial, Helvetica, sans-serif;
   color: black;
-  margin: 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
-  padding: 1em 1.5em;
+  padding: 1em 1.5em 1em 1.5em;
   background-color: #F0F0F0;
   display: block;
+}
+
+.acomment{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding: 1em 1.5em 1em 1.5em;
+  background-color: #f8f8f8;
+  display: block;
+}
+
+.acomment p{
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  text-align: left;
+  color: black;
 }
 
 .submitButton{
@@ -332,11 +350,13 @@ th,td{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 2em;
+  font-size: 1.5em;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   opacity:0.8;
 }
+
+
 .purchase-button a {
   color:black;
 }
@@ -346,7 +366,28 @@ th,td{
   color:black;
 }
 
+.delete-button{
+  background-color: #ffaaaa;
+}
+
+.delete-button a:hover{
+   background-color: #ffaaaa;
+   color: black;
+}
+
 .purchase-button:hover {
     background-color: #0bc0de; /* #7EA8AA; */
     color: white;
+}
+
+.postingbox{
+  margin-left: auto;
+  margin-right: auto;
+  width:auto;
+  padding:1em;
+  border: 1px solid #96BAD2; /*#bad8d8;*/
+  border-radius: 5px;
+  background-color: #96BAD2; /*#bad8d8;*/
+  opacity: 0.8;
+  box-shadow: 0px 0px 8px #8f8f8f;
 }
