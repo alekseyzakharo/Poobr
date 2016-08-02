@@ -1,18 +1,22 @@
-<h1><center>User profile</center></h1>
-<div class="box" style="text-align:left">
-<center>
-  <%= provide(:title, @user.name) %>
-  <div class="field">
-    <a>ID#:  <%= @user.id %></a><br>
+
+<div class="profile">
+  <div class="head">
+    <p class="title">  <%= @user.name %>
+      <%=image_tag 'profile.png', :size => "100x100" %>
+    </p>
+
+  <div style="description">
+  <p>
+    <strong>ID#:</strong>  <%= @user.id %>
+  </p>
+  <p>
+    <strong>Name:</strong> <%= @user.name %>
+  <p>
+    <strong>Email:</strong> <%= @user.email %>
+  </p>
+  <p>
+    <strong>Funds:</strong> <%= @user.funds %>
+  </p>
   </div>
-  <div class="field">
-    <a>Name: <%= @user.name %></a><br>
-  </div>
-  <div class="field">
-    <a>Email: <%= @user.email %></a>
-  </div>
-  <div class="field">
-    <a>Funds: <%= @user.funds %></a>
-  </div>
-</center>
+</div>
 </div>

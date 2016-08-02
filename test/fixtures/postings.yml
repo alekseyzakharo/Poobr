@@ -19,3 +19,14 @@ two:
   infant: false
   handicap: false
   shower: false
+
+post_one:
+  latitude: 1.5
+  longitude: 1.5
+  address: MyString
+  description: MyText
+  title: MyString
+  infant: false
+  handicap: false
+  shower: false
+  userid: 1

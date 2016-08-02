@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+
+
 
   resources :postings do
     resources :comments
