@@ -46,15 +46,16 @@
     <% end %>
     <% end %>
 
-    <% if logged_in? %>
+    <% if (logged_in?) %>
 
-    <div class="purchase-button">
-      <%=  link_to "Purchase Poobr", transaction_path(buyer: current_user.id, owner: @posting.userid,
-      price: @posting.price, path: posting_path) %>
-    </div>
+      <% if ( current_user .id != @posting.userid ) %>
+      <div class="purchase-button">
+        <%=  link_to "Purchase Poobr", transaction_path(buyer: current_user.id, owner: @posting.userid,
+        price: @posting.price, path: posting_path) %>
+      </div>
+      <% end %>
     <div class="purchase-button">
       <%= link_to 'Edit this posting', edit_posting_path(@posting) %>
-
     </div>
     <% end %>
   </div>
