@@ -83,7 +83,7 @@ class UsersController < ApplicationController
         @user = User.find_by_confirm_token(params[:id])
         if @user
             @user.pass_reset
-             flash[:success] = "Your password has been reset, you can now log in with your new password that you received in the email"
+             flash[:success] = "Your new password has been sent to your email"
              UserMailer.password_new(@user).deliver_now
              redirect_to login_url
 
@@ -99,9 +99,9 @@ class UsersController < ApplicationController
     def reset_pass
         @user = User.find_by_email(params[:email])
         if @user.email_confirmed
-            @user.confirmation_token
+            @user.update_attributes(:confirm_token =>SecureRandom.urlsafe_base64.to_s)
             UserMailer.password_reset(@user).deliver_now
-            flash[:success] = "Your new password has been sent to your email"
+            flash[:success] = "Check your email for a link to reset your password"
             redirect_to login_url
         else
             flash[:error] = "This account has not been activated"

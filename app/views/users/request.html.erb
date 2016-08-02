@@ -5,7 +5,7 @@
 <div class="welcomebox">
   <center>
   <%= form_tag("/reset_pass", method: :get, class: " navbar-form", :enforce_utf8 => false) do %>
-    <%= text_field_tag :search, params[:email], placeholder: "Enter Email Address", class: "form-control" %>
+    <%= text_field_tag :email, params[:email], placeholder: "Enter Email Address", class: "form-control" %>
     <%= submit_tag "Submit", name: nil, :class => "btn btn-info" %>
   <% end %>
 </center>
