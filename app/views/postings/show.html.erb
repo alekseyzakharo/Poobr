@@ -37,7 +37,7 @@
     </p>
     <p>
       <strong>Price:</strong>
-      <%= @posting.price %>
+      $<%= @posting.price %>
     </p>
     <% @users.each do |user| %>
     <% if (user.id == @posting.userid) %>
