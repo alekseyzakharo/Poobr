@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get 'request' => 'users#request'
+
   get 'transaction' => 'users#transaction'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'

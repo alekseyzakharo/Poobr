@@ -1,0 +1,7 @@
+<center>
+<h2> Reset Password </h2>
+<%= form_tag("/reset_pass", method: :get, class: " navbar-form") do %>
+  <%= text_field_tag :search, params[:email], placeholder: "Enter Email Address", class: "form-control" %>
+  <%= submit_tag "Find Poobr's", name: nil, :class => "btn btn-info" %>
+<% end %>
+</center>
