@@ -90,7 +90,7 @@ h1
 {
   width: 60%;
   height: 5%;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .submit
@@ -124,7 +124,7 @@ th,td{
 /*styling for the page for a posting: */
 
 .posting{
-  
+
   padding: 1em;
 }
 
