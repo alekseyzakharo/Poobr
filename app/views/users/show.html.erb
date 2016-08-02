@@ -1,9 +1,13 @@
 
-<div class="profile">
-  <div class="head">
-    <p class="title">  <%= @user.name %>
+<div class="profilebox">
+  <div>
+    <p class="title"> <%= @user.name %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <div style="display:inline-block; border: 1px solid black; float:right;">
       <%=image_tag 'profile.png', :size => "100x100" %>
-    </p>
+    </div>
+  </p>
+  </div>
+
 
   <div style="description">
   <p>

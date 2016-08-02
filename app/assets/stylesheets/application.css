@@ -39,9 +39,11 @@ body.guestpage{
   background: -o-linear-gradient(-90deg, #BBAA82, #bad8d8);
   background: -moz-linear-gradient(-90deg, #BBAA82, #bad8d8);
   background: linear-gradient(-90deg, #BBAA82, #bad8d8);*/
-  background-image:url('poobr-notloggedin2.jpeg');
+  background-image:url('poobr-notloggedin3.jpeg');
   /* image courtesy of: http://www.home-designing.com/2014/11/ultra-luxury-bathroom-inspiration
-  www.valkyrie-s.com */
+  www.valkyrie-s.com
+  and http://www.home-designing.com/2014/11/ultra-luxury-bathroom-inspiration
+  */
   background-size: 110%;
 }
 
@@ -163,7 +165,7 @@ th,td{
 /*styling for the page for a posting: */
 
 .posting{
-
+  font-family: Roboto,Arial,Helvetica, sans-serif;
   padding: 1em;
 }
 
@@ -188,20 +190,23 @@ th,td{
 }
 
 .title{
+  font-family: Roboto,Arial,Helvetica, sans-serif;
+  text-align: left;
   font-weight: bold;
   font-size: 150%;
 }
 
-.description{
+.description p{
+  font-family: inherit;
   color: black;
   margin: 1em;
   text-align: left;
-  padding: 1em 1.5em;
-  background-color: white;
+  background-color: transparent;
   display: block;
 }
 
 .comments{
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   color: black;
   margin: 0;
   text-align: left;
@@ -235,7 +240,7 @@ th,td{
   box-shadow: 0px 0px 8px #8f8f8f;
 }
 
-.welcomebox p{
+.welcomebox h1,h2,p{
   font-family: "Century Gothic", Sans, sans-serif;
   font-size: 1.5em;
   text-align: center;
@@ -296,4 +301,52 @@ th,td{
   display: inline-block;
   padding: 5em 1em 5em 1em;
   margin: 5em 1em 5em 1em;
+}
+
+.profilebox p{
+  text-align: left;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.profilebox{
+  font-family: Roboto, Arial, sans-serif;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width:80%;
+  padding:1em;
+  margin: 1em;
+  border: 1px solid #96BAD2;
+  border-radius: 5px;
+  background-color: #96BAD2;
+  opacity: 0.8;
+  box-shadow: 0px 0px 8px #8f8f8f;
+}
+
+.purchase-button {
+  background-color: #6cd1ef;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em;
+  margin: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  opacity:0.8;
+}
+.purchase-button a {
+  color:black;
+}
+
+.purchase-button a:hover{
+  background-color: #0bc0de;
+  color:black;
+}
+
+.purchase-button:hover {
+    background-color: #0bc0de; /* #7EA8AA; */
+    color: white;
 }

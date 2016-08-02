@@ -1,7 +1,12 @@
-<center>
-<h2> Reset Password </h2>
-<%= form_tag("/reset_pass", method: :get, class: " navbar-form", :enforce_utf8 => false) do %>
-  <%= text_field_tag :search, params[:email], placeholder: "Enter Email Address", class: "form-control" %>
-  <%= submit_tag "Submit", name: nil, :class => "btn btn-info" %>
-<% end %>
+<div>
+  <div style = "padding: 1em; margin-left: auto; margin-right: auto; text-align:center;">
+  <h1>Reset Password</h1>
+</div>
+<div class="welcomebox">
+  <center>
+  <%= form_tag("/reset_pass", method: :get, class: " navbar-form", :enforce_utf8 => false) do %>
+    <%= text_field_tag :search, params[:email], placeholder: "Enter Email Address", class: "form-control" %>
+    <%= submit_tag "Submit", name: nil, :class => "btn btn-info" %>
+  <% end %>
 </center>
+</div>

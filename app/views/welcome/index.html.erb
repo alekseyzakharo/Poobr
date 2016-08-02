@@ -14,7 +14,7 @@
 <%= form_tag("/search", method: :get, class: " navbar-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Enter Exact Address", class: "form-control" %>
   <%= select_tag :km, options_for_select([["within 1 km", "1"], ["within 2 km", "2"], ["within 5 km", "5"]]), class: "form-control" %>
-  <%= submit_tag "Find Poobr's", name: nil, :class => "btn btn-info" %>
+  <%= submit_tag "Find Poobrs", name: nil, :class => "btn btn-info" %>
 <% end %>
 
 <div style='width: 800px;margin:0 auto;'>
@@ -46,7 +46,7 @@ handler.buildMap({
       <p>
         In a hurry?
       </p>
-      <button class="welcomebutton"><%= link_to "Click here!", :anchor => "maphere" %></button>
+      <button class="welcomebutton"><%= link_to "Relief is near. Click here!", :anchor => "maphere" %></button>
       </div>
     </div>
   </div>
@@ -73,7 +73,7 @@ handler.buildMap({
 <%= form_tag("/search", method: :get, class: " navbar-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Enter Exact Address", class: "form-control" %>
   <%= select_tag :km, options_for_select([["within 1 km", "1"], ["within 2 km", "2"], ["within 5 km", "5"]]), class: "form-control" %>
-  <%= submit_tag "Find Poobr's", name: nil, :class => "btn btn-info" %>
+  <%= submit_tag "Find Poobrs", name: nil, :class => "btn btn-info" %>
 <% end %>
 
 <div style='width: 800px;margin:0 auto;'>

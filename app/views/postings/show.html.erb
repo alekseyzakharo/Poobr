@@ -27,8 +27,8 @@
       <% end %>
 
     </div>
-    <div style="description">
-      <p>
+    <div class="description">
+      <p class="description">
         <strong>Address:</strong> <%= @posting.address %>
       </p>
         <p>
@@ -65,7 +65,7 @@
 
 <div class="comments" style="margin: -1.5em 1em 1em 1em;">
   <div class="comments">
-  <div class="title"> <h2>Comments</h2></div>
+  <div class="title" style="font-size: 2em"><strong>Comments:</strong></div>
   <% @posting.comments.each do |comment| %>
 
 <div style="float:right; margin: 0em 1em 0em 1em; display: block;">
