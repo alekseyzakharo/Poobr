@@ -23,6 +23,41 @@ body{
    background-image:url('background.png');
 }
 
+/* welcome page when not logged in:*/
+body.guestpage{
+  font-family: Roboto,Arial,Helvetica,sans-serif;
+  color: #04567E;
+  line-height:1.5;
+  margin:0;
+  /*background: #BAD8D8;
+  background: -webkit-linear-gradient(-90deg, #BBAA82, #bad8d8);
+  background: -o-linear-gradient(-90deg, #BBAA82, #bad8d8);
+  background: -moz-linear-gradient(-90deg, #BBAA82, #bad8d8);
+  background: linear-gradient(-90deg, #BBAA82, #bad8d8);*/
+  background-image:url('poobr-notloggedin2.jpeg');
+  /* image courtesy of: http://www.home-designing.com/2014/11/ultra-luxury-bathroom-inspiration
+  www.valkyrie-s.com */
+  background-size: 110%;
+  background-repeat:no-repeat;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+a:visited{
+
+}
+
+a:hover{
+  color: grey;
+  background-color: none;
+}
+
+a:active{
+
+}
+
 /*Paragraph format:
 */
 
@@ -182,4 +217,64 @@ th,td{
 
 .comment_submit{
   width: 150px;
+}
+
+.welcomebox{
+  margin-left: auto;
+  margin-right: auto;
+  width:50%;
+  padding:1em;
+  border: 1px solid #bad8d8;
+  border-radius: 5px;
+  background-color: #bad8d8;
+  opacity: 0.8;
+  box-shadow: 0px 0px 8px #8f8f8f;
+}
+
+.welcomebox p{
+  font-family: "Century Gothic", Sans, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.welcomebutton{
+    background-color: #04567E; /*#7EA8AA; */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 1em 3em;
+    margin:1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    opacity:0.8;
+}
+
+.welcomebutton a{
+  font-family: "Century Gothic", sans-serif;
+  color: #EFEFEF;
+}
+
+.welcomebutton:hover {
+    background-color: #04060E; /* #7EA8AA; */
+    color: white;
+}
+
+.buttonholder{
+  text-align: center;
+}
+/* divs for centering the welcome box */
+.outer {
+  display: table;
+  position: absolute;
+  height: 80%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
 }
