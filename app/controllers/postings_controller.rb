@@ -141,7 +141,7 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def posting_params
-      params.require(:posting).permit(:latitude, :longitude, :address, :description, :title, :infant, :handicap, :shower, :userid, :image_id)
+      params.require(:posting).permit(:latitude, :longitude, :address, :description, :title, :infant, :handicap, :shower, :userid, :image_id, :price)
     end
 
     def gmaps4rails_marker_picture
