@@ -101,7 +101,7 @@ class PostingsController < ApplicationController
 			redirect_to "/"
 		else
 			if @postings.length < 1
-        flash[:error] = "Sorry! We couldn't find any Poobr's within #{@distance} km of #{@location}."
+        flash[:error] = "Sorry! We couldn't find any Poobrs within #{@distance} km of #{@location}."
 				#gflash notice: "Sorry! We couldn't find any farms within #{@distance} km of #{@location}."
 				redirect_to "/"
 			else
