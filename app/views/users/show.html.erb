@@ -19,7 +19,7 @@
     <strong>Email:</strong> <%= @user.email %>
   </p>
   <p>
-    <strong>Funds:</strong> <%= @user.funds %>
+    <strong>Funds:</strong> $<%= @user.funds %>
   </p>
   <% if ((logged_in?) && (current_user.level == 0)) %>
   <div class="purchase-button">
