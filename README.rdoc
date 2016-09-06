@@ -1,15 +1,22 @@
 == README
 
+URL: http://poobr.herokuapp.com/
+
 This is the project for CMPT276 by Group 3.
 
-<Description of the app and features to be placed here>
+This is a lavatory locating app designed to help individuals who are unfamiliar with their urban environment.
+
 
 Team members:
 
 Aleksey - DB backend development
+
 Oleg - DB, backend development
+
 Eoin - frontend, HTML
+
 Siqi - frontend, HTML
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
