@@ -26,5 +26,7 @@ Verification emails are sent to /letter_opener , which is an emulation of an smt
 
 
 admin:
+
 email: admin@admin.com
+
 password: heyhey
